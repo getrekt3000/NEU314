@@ -2,7 +2,7 @@ image=Array{Float64}(undef, 360, 640, 3)
 r=Array{Float64}(undef, 360, 640)
 g=Array{Float64}(undef, 360, 640)
 b=Array{Float64}(undef, 360, 640)
-
+println("Reset with git reset --mixed")
 
 '''
 f(filename)
