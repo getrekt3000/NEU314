@@ -32,3 +32,13 @@ function f(filename)
 end
 
 f("el-capitan.png")
+
+image2=Array{Float64}(undef, 360, 640, 3)
+image2[:,:,1]=g
+image2[:,:,2]=b
+image2[:,:,3]=r
+
+figure(figsize=[10,5])
+subplot(1,2,1); imshow(image); axis("off"); title("El Capitan Normal")
+subplot(1,2,2); imshow(image2); axis("off"); title("El Capitan Colorido")
+savefig("Assignment 3")
