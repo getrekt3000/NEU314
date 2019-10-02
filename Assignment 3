@@ -1,3 +1,5 @@
+#Exercise 1.A
+
 image=Array{Float64}(undef, 360, 640, 3)
 r=Array{Float64}(undef, 360, 640)
 g=Array{Float64}(undef, 360, 640)
@@ -7,25 +9,26 @@ println("Reset with git reset --mixed")
 '''
 f(filename)
 
-Given the string of a picture's name, extracts and returns
+Given the string of a pictures name, extracts and returns
 its red, green and blue matrix.
 
 = PARAMETERS:
 
-- filename    String of the file's name
+- filename    String of the files name
 
 = RETURNS:
 
--  r    matrix of the red values
--  g    matrix of the green values
--  b    matrix of the blue values
+-  r    Matrix of the red values
+-  g    Matrix of the green values
+-  b    Matrix of the blue values
 
-"""
+'''
 
 function f(filename)
     global image=imread(filename)
     imshow(image)
-    global r = image[:,:,1]
+    # Extract the channels
+    global r = image[:,:,1] 
     global g = image[:,:,2]
     global b = image[:,:,3]
     return r, b, g
@@ -33,6 +36,7 @@ end
 
 f("el-capitan.png")
 
+# Makes a new image with mixed up channels
 image2=Array{Float64}(undef, 360, 640, 3)
 image2[:,:,1]=g
 image2[:,:,2]=b
@@ -42,3 +46,37 @@ figure(figsize=[10,5])
 subplot(1,2,1); imshow(image); axis("off"); title("El Capitan Normal")
 subplot(1,2,2); imshow(image2); axis("off"); title("El Capitan Colorido")
 savefig("Assignment 3")
+
+
+#Exercise 1.B
+'''
+f(filename, p)
+
+Given the string of a pictures name and an integer p, extract the red channel of the picture and rotate it by p. Also shows the assignments red channel picture rotated by 180.
+
+= PARAMETERS:
+
+- filename    String of the files name
+- p           Integer of degree of rotation
+
+= RETURNS:
+
+-  r2_after   Matrix of the red channel after the rotation    
+
+'''
+function circle(filename, p)
+    image2=Array{Float32}(undef, 360, 640, 3)
+    r2=Array{Float32}(undef, 360, 640, 1)
+    r2_after=Array{Float32}(undef, 360, 640, 1)
+
+    image2=imread(filename)
+    r2 = image2[:,:,1] # Extract red channel
+    r2_after=Array{Float32}(undef, 360, 640, 1)
+    r2_after=circshift(r2, (-p,0)) # Rotate by p upwards
+
+    figure(figsize=[10,5])
+    subplot(1,2,1); imshow(r2); axis("off"); title("Red Channel")
+    subplot(1,2,2); imshow(circshift(r2, (-180,0))); axis("off"); title("Red Channel After 180 Rotation")
+    savefig("Assignment 3B") # Moves the channel up by 180 pixels
+    return r2_after
+end
