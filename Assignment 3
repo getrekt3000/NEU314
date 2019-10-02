@@ -1,0 +1,34 @@
+image=Array{Float64}(undef, 360, 640, 3)
+r=Array{Float64}(undef, 360, 640)
+g=Array{Float64}(undef, 360, 640)
+b=Array{Float64}(undef, 360, 640)
+
+
+'''
+f(filename)
+
+Given the string of a picture's name, extracts and returns
+its red, green and blue matrix.
+
+= PARAMETERS:
+
+- filename    String of the file's name
+
+= RETURNS:
+
+-  r    matrix of the red values
+-  g    matrix of the green values
+-  b    matrix of the blue values
+
+"""
+
+function f(filename)
+    global image=imread(filename)
+    imshow(image)
+    global r = image[:,:,1]
+    global g = image[:,:,2]
+    global b = image[:,:,3]
+    return r, b, g
+end
+
+f("el-capitan.png")
