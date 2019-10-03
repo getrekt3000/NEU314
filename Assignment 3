@@ -50,7 +50,7 @@ savefig("Assignment 3")
 
 #Exercise 1.B
 '''
-f(filename, p)
+circle(filename, p)
 
 Given the string of a pictures name and an integer p, extract the red channel of the picture and rotate it by p. Also shows the assignments red channel picture rotated by 180.
 
