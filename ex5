@@ -2,13 +2,13 @@
 
 Part 1:
 
-1a. M doubled the length of the vectors without changing their directions
-    (by stretching them by 2 along both axes).
+1a. M doubled the length of the vectors without changing their
+    directions (by stretching them by 2 along both axes).
 
 ```julia
 include("animate_matrix.jl")
 
-x = [0.5 0.8 0.7; 1 0.2 0.3] # each column of x will be one of x1, x2, or x3
+x = [0.5 0.8 0.7; 1 0.2 0.3]
 M = [2 0; 0 2]
 animate_matrix(M, seed = x)
 ```
@@ -47,9 +47,10 @@ animate_matrix((R,M2))
 # same transformation as previous but in one step
 animate_matrix(B)
 ```
-When the transformations are done at the same time it looks as though the points
-are rotated along an oval (a circle stretched out). A and B don't give the same
-output because they do the transformations in different order.
+When the transformations are done at the same time it looks as
+though the points are rotated along an oval (a circle
+stretched out). A and B don't give the same output because
+they do the transformations in different order.
 
 1f.
 ```julia
@@ -58,10 +59,12 @@ animate_matrix(M3)
 M4 = [1.25 0.75 ; 0.75 1.25]
 animate_matrix(M4)
 ```
-M3 halves vectors along the x-axis and doubles them along the y-axis.
+M3 halves vectors along the x-axis and doubles them along the
+y-axis.
 
-M4 and M3 are similar matrices, with M4 doing the same transformation as
-M3 but along the basis: B= {(1/sqrt(2), -1/sqrt(2)), (-1/sqrt(2),-1/sqrt(2)}
+M4 and M3 are similar matrices, with M4 doing the same
+transformation as M3 but along the basis:
+B= {(1/sqrt(2), -1/sqrt(2)), (-1/sqrt(2),-1/sqrt(2)}
 instead of the standard basis.
 
 1g.
@@ -80,6 +83,6 @@ animate_matrix((V3,M3,V3))
 animate_matrix(M4)
 ```
 INSERT PICS
-The first column of H is half the first column of V3 and the second column of H
-is twice the second column of V3.
+The first column of H is half the first column of V3 and the second
+column of H byis twice the second column of V3.
 INSERT END OF ANIMATIONS BUT NOT FOR A AND C
