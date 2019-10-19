@@ -61,7 +61,8 @@ animate_matrix(M4)
 M3 halves vectors along the x-axis and doubles them along the y-axis.
 
 M4 and M3 are similar matrices, with M4 doing the same transformation as
-M3 but along the basis: B= {(1/sqrt(2), -1/sqrt(2)), (-1/sqrt(2),-1/sqrt(2)}.
+M3 but along the basis: B= {(1/sqrt(2), -1/sqrt(2)), (-1/sqrt(2),-1/sqrt(2)}
+instead of the standard basis.
 
 1g.
 ```julia
