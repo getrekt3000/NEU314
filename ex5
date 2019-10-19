@@ -1,0 +1,84 @@
+### NEU314 Exercises 5 - Trang Uyen Nguyen
+
+Part 1:
+
+1a. M doubled the length of the vectors without changing their directions
+    (by stretching them by 2 along both axes).
+
+```julia
+include("animate_matrix.jl")
+
+x = [0.5 0.8 0.7; 1 0.2 0.3] # each column of x will be one of x1, x2, or x3
+M = [2 0; 0 2]
+animate_matrix(M, seed = x)
+```
+
+1b.
+```julia
+M2 = [2 0; 0 1]
+animate_matrix(M2, seed = x)
+```
+1c and 1d.
+```julia
+a = 2*pi/3
+R=[cos(a) sin(a); -sin(a) cos(a)]
+animate_matrix(R, seed=x)
+animate_matrix((inv(R),R), seed = x)
+animate_matrix((R,R,R), seed = x)
+```
+1e.
+```julia
+A = M2 * R
+print(A)
+[-1.0 1.73205; -0.866025 -0.5]
+
+B = R * M2
+print(B)
+[-1.0 0.866025; -1.73205 -0.5]
+```
+insert pic done by hand
+```julia
+# rotates, then stretches by 2 along the x-axis
+animate_matrix((M2,R))
+# same transformation as previous but in one step
+animate_matrix(A)
+# stretches by 2 along the x-axis, then rotates
+animate_matrix((R,M2))
+# same transformation as previous but in one step
+animate_matrix(B)
+```
+When the transformations are done at the same time it looks as though the points
+are rotated along an oval (a circle stretched out). A and B don't give the same
+output because they do the transformations in different order.
+
+1f.
+```julia
+M3 = [0.5 0 ; 0 2]
+animate_matrix(M3)
+M4 = [1.25 0.75 ; 0.75 1.25]
+animate_matrix(M4)
+```
+M3 halves vectors along the x-axis and doubles them along the y-axis.
+
+M4 and M3 are similar matrices, with M4 doing the same transformation as
+M3 but along the basis: B= {(1/sqrt(2), -1/sqrt(2)), (-1/sqrt(2),-1/sqrt(2)}.
+
+1g.
+```julia
+m = 1/sqrt(2)
+V3 = [m -m; -m -m]
+C = M3 * V3
+print(C)
+[0.353553 -0.353553; -1.41421 -1.41421]
+
+D = V3 * C
+print(D)
+[1.25 0.75; 0.75 1.25]
+
+animate_matrix((V3,M3,V3))
+animate_matrix(M4)
+```
+INSERT PICS
+The first column of H is half the first column of V3 and the second column of H
+is twice the second column of V3.
+INSERT END OF ANIMATIONS BUT NOT FOR A AND C
