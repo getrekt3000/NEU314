@@ -58,7 +58,7 @@ B = R * M2
 print(B)
 [-1.0 0.866025; -1.73205 -0.5]
 ```
-INSERT PIC DONE B Y  H A N D
+![1e](https://user-images.githubusercontent.com/56043343/67153246-ad2d3680-f2b3-11e9-956b-e207b2f281ae.jpg)
 ```julia
 # rotates, then stretches by 2 along the x-axis
 animate_matrix((M2,R))
@@ -118,6 +118,7 @@ B= {(1/sqrt(2), -1/sqrt(2)), (-1/sqrt(2),-1/sqrt(2)}
 instead of the standard basis.
 
 1g.
+![1g](https://user-images.githubusercontent.com/56043343/67153263-f4b3c280-f2b3-11e9-84c3-9de0cbed40f6.jpg)
 
 The first column of H is half the first column of V3 and the second
 column of H byis twice the second column of V3.
